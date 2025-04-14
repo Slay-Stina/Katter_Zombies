@@ -1,26 +1,65 @@
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+body {
+    font-family: Comic Sans MS, cursive, sans-serif;
+    background-color: white;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+main {
+    text-align: center;
+    background-color: white;
+    padding: 50px 30px;
+    margin-bottom: 20px;
+}
+main h2 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    text-shadow: 1px 1px #fff;
+    margin: 0;
+    padding: 15px 0;
+}
 nav {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     color: white;
+    border-bottom: dotted 3px #fff;
     margin: 0;
     padding: 10px 20px;
-    background-color: #333;
-    border-radius: 5px;
+    background: linear-gradient(to right, #ff69b4, green);
 }
 nav a {
-    margin-right: 20px;
+    margin: 0 15px;
     color: white;
-    font-size: 18px;
+    font-size: 1.2em;
+    font-weight: bold;
     text-decoration: none;
     margin: 10px;
 }
-nav a:hover, nav h3:hover {
+nav a:hover, nav h2:hover {
     cursor: pointer;
     color: #ddd;
     text-decoration: underline;
 }
-nav a:active, nav h3:active {
-    color: #aaa;
+nav a:active, nav h2:active {
+    color: red;
     text-decoration: underline;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #ff69b4, green);
+    border-top: dotted 3px #fff;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    font-size: 0.9em;
+}
+footer p {
+    margin: 0;
 }

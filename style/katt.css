@@ -1,15 +1,11 @@
-body {
-    font-family: Comic Sans MS, cursive, sans-serif;
-    background-color: #ffe4e1;
-    color: #444;
-    margin: 0;
-    padding: 0;
-}
 header {
     background-color: #ff69b4;
     padding: 20px;
     text-align: center;
     border-bottom: 5px dashed #fff;
+}
+body {
+    background-color: #fff;
 }
 header h1 {
     margin: 0;
@@ -17,55 +13,78 @@ header h1 {
     text-shadow: 2px 2px #fff;
 }
 nav {
-    background-color: #fff;
     border-bottom: 3px dotted #ff69b4;
     color: #ff69b4;
-    padding: 10px;
-    text-align: center;
+    background: #fff;
 }
 nav a {
-    margin: 0 15px;
-    text-decoration: none;
     color: #ff69b4;
-    font-weight: bold;
-    font-size: 1.2em;
 }
 nav a:hover {
     color: #ff4500;
     transform: rotate(10deg);
     display: inline-block;
 }
-main {
-    padding: 20px;
-    text-align: center;
+nav h2:hover {
+    cursor: pointer;
+    color: #ff4500;
 }
+main {
+    background-color: pink;
+}
+main h2 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    text-shadow: 1px 1px #fff;
+    margin: 0;
+    padding: 15px 0;
+}
+.box {
+    --mask:
+      radial-gradient(2.24vw at 3vw 50%,#000 99%,#0000 101%) 0 calc(50% - 4vw)/51% 8vw repeat-y,
+      radial-gradient(2.24vw at -1vw 50%,#0000 99%,#000 101%) 2vw 50%/calc(51% - 2vw) 8vw repeat-y,
+          radial-gradient(2.24vw at calc(100% - 3vw) 50%,#000 99%,#0000 101%) 100% calc(50% - 4vw)/51% 8vw repeat-y,
+      radial-gradient(2.24vw at calc(100% + 1vw) 50%,#0000 99%,#000 101%) calc(100% - 2vw) 50%/calc(51% - 2vw) 8vw repeat-y;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
 #gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-radius: 2em;
     padding: 20px;
 }
 #gallery img {
-    margin: 10px;
-    border-radius: 50%;
     max-height: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transform: rotate(-5deg);
+    object-fit: cover;
+    --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+               mask-border: var(--_m);
+    clip-path: polygon(-41% 0,50% 91%, 141% 0);
     transition: transform 0.3s ease;
+    transform: rotate(-5deg);
 }
+
 #gallery img:hover {
     transform: rotate(5deg) scale(1.1);
 }
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #ff69b4;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.9em;
+#about {
+    background-color: #ffe4e1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 800px;
 }
-footer p {
-    margin: 0;
-    color: #fff;
+#cat-fact-box {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px auto;
+    max-width: 800px;
+}
+footer {
+    background: #ff69b4;
 }

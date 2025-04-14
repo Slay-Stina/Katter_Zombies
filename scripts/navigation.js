@@ -1,6 +1,6 @@
 const navbar = document.createElement('nav');
-
 const homeHeader = document.createElement('h2');
+
 homeHeader.textContent = '🐈‍⬛Katter & Zombies🧟';
 homeHeader.addEventListener('click', () => {
     window.location.href = 'index.html';
@@ -27,3 +27,9 @@ links.forEach(link => {
 navbar.appendChild(linksContainer);
 
 document.body.prepend(navbar);
+
+const footer = document.createElement('footer');
+const footerText = document.createElement('p');
+footerText.textContent = '© 2025 Katter & Zombies. Drivs av Slay Stina.';
+footer.appendChild(footerText);
+document.body.appendChild(footer);

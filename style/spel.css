@@ -1,0 +1,10 @@
+nav, footer {
+    background: #900c3f;
+}
+nav {
+    border-bottom: 3px solid #ffc300;
+}
+
+footer {
+    border-top: 3px solid #ffc300;
+}
