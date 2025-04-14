@@ -1,7 +1,7 @@
 const navbar = document.createElement('nav');
 
-const homeHeader = document.createElement('h3');
-homeHeader.textContent = 'Katter & Zombies';
+const homeHeader = document.createElement('h2');
+homeHeader.textContent = '🐈‍⬛Katter & Zombies🧟';
 homeHeader.addEventListener('click', () => {
     window.location.href = 'index.html';
 });

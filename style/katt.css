@@ -1,0 +1,71 @@
+body {
+    font-family: Comic Sans MS, cursive, sans-serif;
+    background-color: #ffe4e1;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #ff69b4;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px dashed #fff;
+}
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    text-shadow: 2px 2px #fff;
+}
+nav {
+    background-color: #fff;
+    border-bottom: 3px dotted #ff69b4;
+    color: #ff69b4;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+nav a:hover {
+    color: #ff4500;
+    transform: rotate(10deg);
+    display: inline-block;
+}
+main {
+    padding: 20px;
+    text-align: center;
+}
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+#gallery img {
+    margin: 10px;
+    border-radius: 50%;
+    max-height: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+#gallery img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ff69b4;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+footer p {
+    margin: 0;
+    color: #fff;
+}

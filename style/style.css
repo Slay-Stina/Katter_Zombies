@@ -20,3 +20,7 @@ nav a:hover, nav h3:hover {
     color: #ddd;
     text-decoration: underline;
 }
+nav a:active, nav h3:active {
+    color: #aaa;
+    text-decoration: underline;
+}
