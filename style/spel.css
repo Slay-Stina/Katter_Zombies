@@ -1,5 +1,50 @@
+#theGame {
+    display: flex;
+    justify-content: center;
+}
+#gameSection {
+    text-align: center;
+}
+#gameSection h2 {
+    font-size: 2em;
+    color: green;
+    text-shadow: 1px 1px #fff;
+    margin: 0;
+    padding: 15px 0;
+}
+h1 {
+    font-size: 2.5em;
+    color: #ff69b4;
+    text-shadow: 1px 1px #fff;
+    margin: 0;
+    padding: 15px 0;
+}
+aside {
+    width: 200px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+li {
+    list-style-type: none;
+    padding: 5px;
+    border-radius: 3px;
+}
 #imgContainer {
     position: relative;
+    width: 500px;
+    height: 500px;
+}
+#currentPosImg {
+    width: 100%;
+    height: auto;
 }
 nav, footer {
     background: #900c3f;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,30 @@
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/spel.js" defer></script>
 </head>
+
 <body>
-    <div id="imgContainer">
-        <img src="" id="currentPosImg">
+    <div id="theGame">
+        <section id="gameSection">
+            <h1>Hitta katten!</h1>
+            <h2>Innan zombien hittar dig!</h2>
+            <div id="imgContainer">
+                <img src="" id="currentPosImg">
+            </div>
+        </section>
+        <aside>
+            <h2>Controls</h2>
+            <ul>
+                <li>Arrow Up: Move Up</li>
+                <li>Arrow Down: Move Down</li>
+                <li>Arrow Left: Move Left</li>
+                <li>Arrow Right: Move Right</li>
+            </ul>
+            <hr>
+            <p id="playerPos"></p>
+            <p id="catPos"></p>
+            <p id="zombiePos"></p>
+        </aside>
     </div>
-    <p id="playerPos"></p>
-    <p id="catPos"></p>
-    <p id="zombiePos"></p>
 </body>
+
 </html>

@@ -33,6 +33,7 @@ function showCatOrZombie() {
         catImg.style.position = 'absolute';
         catImg.style.left = '50%';
         catImg.style.top = `100%`;
+        catImg.style.transform = 'translate(-50%, -100%)';
         document.getElementById('imgContainer').appendChild(catImg);
     }
     if (playerPosition.x === zombiePosition.x && playerPosition.y === zombiePosition.y) {
@@ -41,6 +42,7 @@ function showCatOrZombie() {
         zombieImg.style.position = 'absolute';
         zombieImg.style.left = '50%';
         zombieImg.style.top = `100%`;
+        zombieImg.style.transform = 'translate(-50%, -100%)';
         document.getElementById('imgContainer').appendChild(zombieImg);
     }
 }
@@ -54,7 +56,7 @@ function movePlayer(direction) {
     moveZombie();
     printPositions();
     showCatOrZombie();
-    /*checkGameState();*/
+    checkGameState();
 }
 
 function printPositions() {
@@ -76,11 +78,15 @@ function moveZombie() {
 
 function checkGameState() {
     if (playerPosition.x === catPosition.x && playerPosition.y === catPosition.y) {
-        alert('You found the cat! You win!');
-        resetGame();
+        setTimeout(() => {
+            alert('You found the cat! You win!');
+            resetGame();
+        }, 500); // Delay to allow the image to appear
     } else if (playerPosition.x === zombiePosition.x && playerPosition.y === zombiePosition.y) {
-        alert('The zombie got you! Game over!');
-        resetGame();
+        setTimeout(() => {
+            alert('The zombie got you! Game over!');
+            resetGame();
+        }, 500); // Delay to allow the image to appear
     }
 }
 
@@ -102,4 +108,3 @@ document.addEventListener('keydown', (event) => {
 document.getElementById('catPos').innerText = `Cat Position: (${catPosition.x}, ${catPosition.y})`;
 document.getElementById('zombiePos').innerText = `Zombie Position: (${zombiePosition.x}, ${zombiePosition.y})`;
 document.getElementById('playerPos').innerText = `Player Position: (${playerPosition.x}, ${playerPosition.y})`;
-showCurrentPosImg();
