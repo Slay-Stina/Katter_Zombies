@@ -1,3 +1,6 @@
+#imgContainer {
+    position: relative;
+}
 nav, footer {
     background: #900c3f;
 }
