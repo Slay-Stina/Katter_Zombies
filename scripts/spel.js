@@ -137,12 +137,12 @@ function checkGameState() {
         setTimeout(() => {
             alert('Zombien fick tag på dig! Spelet är över!');
             resetGame();
+            sessionStorage.clear();
         }, 500);
     }
 }
 
 function resetGame() {
-    sessionStorage.clear();
     playerPosition = { x: 0, y: 0 };
     catPosition = { x: Math.floor(Math.random() * 5), y: Math.floor(Math.random() * 5) };
     zombiePosition = { x: Math.floor(Math.random() * 5), y: Math.floor(Math.random() * 5) };
