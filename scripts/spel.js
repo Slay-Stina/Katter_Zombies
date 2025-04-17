@@ -26,6 +26,36 @@ for (let y = 0; y < 5; y++) {
 }
 currentPosImg.src = mapGrid[playerPosition.y][playerPosition.x];
 
+function renderMap() {
+    const mapContainer = document.getElementById('map');
+    mapContainer.innerHTML = '';
+
+    for (let y = 0; y < 5; y++) {
+        const row = document.createElement('tr');
+        for (let x = 0; x < 5; x++) {
+            const cell = document.createElement('td');
+            cell.style.width = '50px';
+            cell.style.height = '50px';
+            cell.style.textAlign = 'center';
+            cell.style.fontSize = '24px';
+
+            if (playerPosition.x === x && playerPosition.y === y) {
+                cell.textContent = '🧍';
+            } else if (catPosition.x === x && catPosition.y === y) {
+                cell.textContent = '🐱';
+            } else if (zombiePosition.x === x && zombiePosition.y === y) {
+                cell.textContent = '🧟';
+            } else {
+                cell.textContent = '🌲';
+            }
+
+            row.appendChild(cell);
+        }
+        mapContainer.appendChild(row);
+    }
+}
+renderMap();
+
 function showCatOrZombie() {
     if (playerPosition.x === catPosition.x && playerPosition.y === catPosition.y) {
         const catImg = document.createElement('img');
@@ -56,13 +86,11 @@ function movePlayer(direction) {
     moveZombie();
     printPositions();
     showCatOrZombie();
+    renderMap();
     checkGameState();
 }
 
 function printPositions() {
-    document.getElementById('catPos').innerText = `Cat Position: (${catPosition.x}, ${catPosition.y})`;
-    document.getElementById('zombiePos').innerText = `Zombie Position: (${zombiePosition.x}, ${zombiePosition.y})`;
-    document.getElementById('playerPos').innerText = `Player Position: (${playerPosition.x}, ${playerPosition.y})`;
     currentPosImg.src = mapGrid[playerPosition.y][playerPosition.x];
 }
 
@@ -76,17 +104,40 @@ function moveZombie() {
     }
 }
 
+let score = sessionStorage.getItem('score') ? parseInt(sessionStorage.getItem('score')) : 0;
+document.getElementById('score').innerText = `Poäng: ${score}`;
+
+function updateScore(points) {
+    if (points === 0) { score = 0; }
+    else { score += points; }
+    sessionStorage.setItem('score', score);
+    document.getElementById('score').innerText = `Poäng: ${score}`;
+}
+let highScore = localStorage.getItem('highScore') ? parseInt(localStorage.getItem('highScore')) : 0;
+document.getElementById('highScore').innerText = `Highscore: ${highScore}`;
+
+function updateHighScore() {
+    if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('highScore', highScore);
+        document.getElementById('highScore').innerText = `Highscore: ${highScore}`;
+    }
+}
+
 function checkGameState() {
     if (playerPosition.x === catPosition.x && playerPosition.y === catPosition.y) {
+        updateScore(1);
+        updateHighScore();
         setTimeout(() => {
-            alert('You found the cat! You win!');
+            alert('Du hittade en katt! Hitta fler innan zombien kommer!');
             resetGame();
-        }, 500); // Delay to allow the image to appear
+        }, 500);
     } else if (playerPosition.x === zombiePosition.x && playerPosition.y === zombiePosition.y) {
+        updateScore(0);
         setTimeout(() => {
-            alert('The zombie got you! Game over!');
+            alert('Zombien fick tag på dig! Spelet är över!');
             resetGame();
-        }, 500); // Delay to allow the image to appear
+        }, 500);
     }
 }
 

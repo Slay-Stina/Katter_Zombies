@@ -5,6 +5,10 @@
 #gameSection {
     text-align: center;
 }
+#map {
+    vertical-align: middle;
+    background-color: pink;
+}
 #gameSection h2 {
     font-size: 2em;
     color: green;
@@ -17,7 +21,6 @@ h1 {
     color: #ff69b4;
     text-shadow: 1px 1px #fff;
     margin: 0;
-    padding: 15px 0;
 }
 aside {
     width: 200px;
