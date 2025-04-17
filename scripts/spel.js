@@ -155,7 +155,3 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') movePlayer('left');
     if (event.key === 'ArrowRight') movePlayer('right');
 });
-
-document.getElementById('catPos').innerText = `Cat Position: (${catPosition.x}, ${catPosition.y})`;
-document.getElementById('zombiePos').innerText = `Zombie Position: (${zombiePosition.x}, ${zombiePosition.y})`;
-document.getElementById('playerPos').innerText = `Player Position: (${playerPosition.x}, ${playerPosition.y})`;
