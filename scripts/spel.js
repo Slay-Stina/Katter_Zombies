@@ -59,7 +59,7 @@ renderMap();
 function showCatOrZombie() {
     if (playerPosition.x === catPosition.x && playerPosition.y === catPosition.y) {
         const catImg = document.createElement('img');
-        catImg.src = "../images/katt.png";
+        catImg.src = "images/katt.png";
         catImg.style.position = 'absolute';
         catImg.style.left = '50%';
         catImg.style.top = `100%`;
@@ -68,7 +68,7 @@ function showCatOrZombie() {
     }
     if (playerPosition.x === zombiePosition.x && playerPosition.y === zombiePosition.y) {
         const zombieImg = document.createElement('img');
-        zombieImg.src = "../images/zombie.png";
+        zombieImg.src = "images/zombie.png";
         zombieImg.style.position = 'absolute';
         zombieImg.style.left = '50%';
         zombieImg.style.top = `100%`;
