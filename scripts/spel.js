@@ -7,7 +7,6 @@ let mapGrid = Array.from({ length: 5 }, () => Array(5).fill(null));
 
 let sessionImages = JSON.parse(sessionStorage.getItem('images')) === null ? [] : JSON.parse(sessionStorage.getItem('images'));
 
-console.log(sessionImages.length);
 if (sessionImages === null || sessionImages.length === 0) {
     addSessionImages();
 }
@@ -17,7 +16,12 @@ function addSessionImages() {
     }
     sessionStorage.setItem('images', JSON.stringify(sessionImages));
 }
-
+function newSession() {
+    sessionImages = [];
+    sessionStorage.clear();
+    addSessionImages();
+    updateScore(0);
+}
 let imageIndex = 0;
 for (let y = 0; y < 5; y++) {
     for (let x = 0; x < 5; x++) {
@@ -84,13 +88,13 @@ function movePlayer(direction) {
     if (direction === 'right' && playerPosition.x < 4) playerPosition.x++;
 
     moveZombie();
-    printPositions();
+    showCurrentPosImg();
     showCatOrZombie();
     renderMap();
     checkGameState();
 }
 
-function printPositions() {
+function showCurrentPosImg() {
     currentPosImg.src = mapGrid[playerPosition.y][playerPosition.x];
 }
 
@@ -137,7 +141,7 @@ function checkGameState() {
         setTimeout(() => {
             alert('Zombien fick tag på dig! Spelet är över!');
             resetGame();
-            sessionStorage.clear();
+            newSession();
         }, 500);
     }
 }
